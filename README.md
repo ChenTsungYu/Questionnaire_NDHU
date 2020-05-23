@@ -1,8 +1,8 @@
-Install virtual enviroment
+Install virtual environment
 ```
 virtualenv env
 ```
-Run virtual enviroment
+Run virtual environment
 ```
 source env/bin/activate
 ```
