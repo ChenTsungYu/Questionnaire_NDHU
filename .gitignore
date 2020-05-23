@@ -1,0 +1,10 @@
+/.eggs
+/.ipynb_checkpoints
+/build
+/dist
+/env
+*.ipynb
+*.spec
+main.py
+setup.py
+*__pycache__
