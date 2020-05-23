@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
 import time
 
-options = webdriver.ChromeOptions() #開啟Selenium進入教學評鑑頁面
+options = webdriver.ChromeOptions() 
 options.add_argument('user-agent="Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19"')
 driver = webdriver.Chrome("./chromedriver", options=options) 
 driver.get('https://sys.ndhu.edu.tw/AA/CLASS/SubjEvaluate/eval-login.aspx')
@@ -40,9 +40,9 @@ for i in range(int(count)):
         print(f"1: {e}")
         pass
     print(f"填寫第{i+1}份，科目： {course_name}")
-    for k in range(len(btns)):
+    for btn in btns:
         try:
-            btns[k].click()
+            btn.click()
         except Exception as e:
             print(f"2: {e}")
             pass
