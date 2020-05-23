@@ -3,13 +3,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
-# from webdriver_manager.firefox import GeckoDriverManager
 from bs4 import BeautifulSoup
 import time
-
-webdriver.ChromeOptions().add_argument('user-agent="Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19"')
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-# driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+options = webdriver.ChromeOptions() 
+options.add_argument('user-agent="Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19"')
+driver = webdriver.Chrome(ChromeDriverManager().install()) 
 driver.get('https://sys.ndhu.edu.tw/AA/CLASS/SubjEvaluate/eval-login.aspx')
 
 account = driver.find_element_by_css_selector('#ContentPlaceHolder1_acc')   

@@ -4,7 +4,7 @@ virtualenv env
 ```
 Run virtual enviroment
 ```
-souce env/bin/activate
+source env/bin/activate
 ```
 Install dependency
 ```
@@ -13,7 +13,7 @@ pip3 install -r requirements.txt
 Pack `.py` as `.exe`
 ```
 pyinstaller -F ./crawler.py
-# 或執行shell script
+# or run in shell script
 ./pack.sh
 ```
 Write dependency into`requirements.txt`(Optional)
