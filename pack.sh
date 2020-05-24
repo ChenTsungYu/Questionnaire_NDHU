@@ -1,2 +1,2 @@
 #!/bin/bash
-pyinstaller -F ./crawler.py
+pyinstaller -F ./qt_crawler.py
