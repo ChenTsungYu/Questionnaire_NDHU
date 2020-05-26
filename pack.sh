@@ -10,5 +10,5 @@ elif [ "${instruction}" = "win" ]; then
     echo "pack exe for windows, plz confirm that docker is running and your're in the folder named 'src'! "
     docker run -v "$(pwd):/src/" cdrx/pyinstaller-windows
 else
-    echo "plz imput correct instruction like: pack, ui, win"
+    echo "plz input correct instruction like: pack, ui, win"
 fi
