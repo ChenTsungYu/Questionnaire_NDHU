@@ -1,6 +1,5 @@
 #!/bin/bash
 read -p "Please input your instruction: " instruction
-<<<<<<< HEAD
 case $instruction in
     "exe") 
         echo "pack exe"
