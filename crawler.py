@@ -42,9 +42,9 @@ for i in range(int(count)):
         print(f"1: {e}")
         pass
     print(f"填寫第{i+1}份，科目： {course_name}")
-    for btn in btns:
+    for k in range(len(btns)):
         try:
-            btn.click()
+            btns[k].click()
         except Exception as e:
             print(f"2: {e}")
             pass
