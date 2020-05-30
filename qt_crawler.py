@@ -24,8 +24,7 @@ class AppWindow(QDialog):
         self.show()
         self.ui.pushButton.clicked.connect(self.send_info)
     def send_info(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('user-agent="Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19"')
+        webdriver.ChromeOptions().add_argument('user-agent="Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19"')
         # options.add_argument('--headless')
         driver = webdriver.Chrome(ChromeDriverManager().install(), options=options) 
         driver.get('https://sys.ndhu.edu.tw/AA/CLASS/SubjEvaluate/eval-login.aspx')
@@ -56,7 +55,6 @@ class AppWindow(QDialog):
                 course_url = url.get_attribute("href")
                 info = f'---------\n課程代碼/課程名稱： {course_code}/{course_name} \n填寫狀態： {course_status}\n填寫網址： {course_url}'
                 self.ui.listWidget.addItem(info)
-                # WebDriverWait(driver, 10).until(EC.element_to_be_clickable(url)).click()
                 url.click()
                 btns = WebDriverWait(driver, 10).until(lambda d: d.find_elements_by_css_selector('input[value="5"]'))
                 btns.size()>0
@@ -72,7 +70,6 @@ class AppWindow(QDialog):
                     pass
             WebDriverWait(driver, 10).until(lambda d: d.find_elements_by_css_selector('input[value="1"]')[12]).click()
             WebDriverWait(driver, 10).until(lambda d: d.find_elements_by_css_selector('input[value="資料存檔"]')[0]).click()
-            # WebDriverWait(driver, 10).until(driver.switch_to.alert).accept()
             driver.switch_to.alert.accept()
             self.ui.listWidget.addItem(f"科目： {course_name} 填寫完畢\n進入下一個科目.....")
 
