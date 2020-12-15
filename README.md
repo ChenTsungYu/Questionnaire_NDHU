@@ -6,7 +6,7 @@ Run virtual environment
 ```
 source env/bin/activate
 ```
-Install dependency
+Install packages
 ```
 pip3 install -r requirements.txt
 ```
@@ -16,7 +16,7 @@ pyinstaller -F ./crawler.py
 # or run in shell script
 ./pack.sh
 ```
-Write dependency into`requirements.txt`(Optional)
+Save packages in `requirements.txt`(Optional)
 ```
 pip3 freeze > requirements.txt
 ```
